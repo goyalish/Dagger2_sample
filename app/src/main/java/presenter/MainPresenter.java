@@ -30,10 +30,15 @@ import retrofit2.Retrofit;
 
 public class MainPresenter {
 
-    NetworkManager mNetworkManager = new NetworkManager();
+    @Inject
+    NetworkManager mNetworkManager;
 
+    @Inject
     Retrofit retrofit;
+
+    @Inject
     RandomUsersApi mRandomUsersApi;
+
     @Inject
     public MainPresenter() {}
 
