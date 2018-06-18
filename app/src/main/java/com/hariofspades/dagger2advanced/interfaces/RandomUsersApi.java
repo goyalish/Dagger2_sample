@@ -23,8 +23,8 @@ public interface RandomUsersApi {
     Call<RandomUsers> getRandomUsers(@Query("results") int size);
 
     @POST("oauth/token")
-    Call<ApiResponse> getToken(@HeaderMap Map<String, String> headers);
+    Call<Object> getToken(@HeaderMap Map<String, String> headers);
 
     @POST("account/join")
-    Call<ApiResponse> join(@HeaderMap Map<String, String> headers, @Body UserDetails userDetails);
+    Call<Object> join(@HeaderMap Map<String, String> headers, @Body UserDetails userDetails);
 }

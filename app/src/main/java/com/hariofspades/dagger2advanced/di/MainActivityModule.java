@@ -10,8 +10,6 @@ import retrofit2.Retrofit;
 
 @Module
 public abstract class MainActivityModule {
-
-
     @Provides
     public static MainPresenter getMainPresenter(NetworkManager networkManager,
                                                  Retrofit retrofit, RandomUsersApi randomUsersApi) {
