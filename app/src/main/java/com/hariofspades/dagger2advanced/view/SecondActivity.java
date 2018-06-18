@@ -1,6 +1,5 @@
 package com.hariofspades.dagger2advanced.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -12,9 +11,8 @@ import com.hariofspades.dagger2advanced.security.AESAlgorithm;
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
-import presenter.DummyDependency;
-import presenter.MainPresenter;
-import presenter.SecondActivityPresenter;
+import com.hariofspades.dagger2advanced.presenter.DummyDependency;
+import com.hariofspades.dagger2advanced.presenter.SecondActivityPresenter;
 import retrofit2.Retrofit;
 
 public class SecondActivity extends DaggerAppCompatActivity {

@@ -1,8 +1,7 @@
-package presenter;
+package com.hariofspades.dagger2advanced.presenter;
 
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.hariofspades.dagger2advanced.di.AppModule;
 import com.hariofspades.dagger2advanced.interfaces.RandomUsersApi;
 import com.hariofspades.dagger2advanced.model.Address;
@@ -30,21 +29,17 @@ import retrofit2.Retrofit;
 
 public class MainPresenter {
 
-    @Inject
     NetworkManager mNetworkManager;
 
-    @Inject
     Retrofit retrofit;
 
-    @Inject
     RandomUsersApi mRandomUsersApi;
 
     @Inject
-    public MainPresenter() {}
-
-    public void set(Retrofit retrofit, RandomUsersApi randomUsersApi) {
+    public MainPresenter(NetworkManager networkManager, Retrofit retrofit, RandomUsersApi randomUsersApi) {
+        this.mNetworkManager = networkManager;
         this.retrofit = retrofit;
-        mRandomUsersApi = randomUsersApi;
+        this.mRandomUsersApi = randomUsersApi;
     }
 
     public String sayHello() {
@@ -66,11 +61,11 @@ public class MainPresenter {
             values.add("POST");
             values.add(URLEncoder.encode(mNetworkManager.baseUrl + "account/join", "UTF-8"));
             for (Map.Entry entry : header.entrySet()) {
-                values.add(URLEncoder.encode("{" + entry.getKey() + "}={" + entry.getValue() + "}","UTF-8"));
+                values.add(URLEncoder.encode("{" + entry.getKey() + "}={" + entry.getValue() + "}", "UTF-8"));
             }
             String signatureValue = mNetworkManager.joinStringListWithAmpersand(values);
             String signatureHash = mNetworkManager.generateHMACSHA256EncodedHash(signatureValue);
-            header.put("oauth_signature",signatureHash);
+            header.put("oauth_signature", signatureHash);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -97,7 +92,7 @@ public class MainPresenter {
 
     }
 
-    public RandomUsersApi getRandomUserService(){
+    public RandomUsersApi getRandomUserService() {
         return retrofit.create(RandomUsersApi.class);
     }
 

@@ -1,4 +1,4 @@
-package presenter;
+package com.hariofspades.dagger2advanced.presenter;
 
 import javax.inject.Inject;
 

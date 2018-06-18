@@ -13,10 +13,8 @@ import javax.inject.Inject;
 
 public class NetworkManager {
     public final String baseUrl = "https://test.demoloyalty.simplicitycrm.com/services/mobileapi/201605/";
-
     @Inject
-    public NetworkManager() {}
-
+    public NetworkManager(){}
     public Map<String, String> getBasicHeader() {
         Map<String, String> header = new LinkedHashMap<>();
         header.put("data", "");

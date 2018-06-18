@@ -2,7 +2,7 @@ package com.hariofspades.dagger2advanced.di;
 
 import dagger.Module;
 import dagger.Provides;
-import presenter.SecondActivityPresenter;
+import com.hariofspades.dagger2advanced.presenter.SecondActivityPresenter;
 
 @Module
 public abstract class SecondActivityModule {

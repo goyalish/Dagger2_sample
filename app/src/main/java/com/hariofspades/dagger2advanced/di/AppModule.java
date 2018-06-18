@@ -6,6 +6,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hariofspades.dagger2advanced.interfaces.RandomUsersApi;
+import com.hariofspades.dagger2advanced.network.NetworkManager;
 
 import dagger.Binds;
 import dagger.Module;
@@ -43,7 +44,7 @@ public abstract class AppModule {
     }
 
     @Provides
-    public static RandomUsersApi getRandomUserService(Retrofit retrofit){
+    public static RandomUsersApi getRandomUserService(Retrofit retrofit) {
         return retrofit.create(RandomUsersApi.class);
     }
 }
