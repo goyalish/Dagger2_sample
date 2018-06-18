@@ -100,8 +100,8 @@ public class AESAlgorithm {
         return text;
     }*/
 
-    private static final String key = "mBI+LWhYkOjClxjfuUrFZHHYfO17lBgRh4bLnVuuLRQ=";
-    private static final String initVector = "hhMtWk0xUL6sFlkOrw9hXA==";
+    private static final String key = "F/Tdp34tohqrg7E3IPCdu+4rx64x2yyIzTvl60Gr0zM=";//"mBI+LWhYkOjClxjfuUrFZHHYfO17lBgRh4bLnVuuLRQ=";
+    private static final String initVector = "kP0t3H1FRhOMbKgS4ap3KA==";//"hhMtWk0xUL6sFlkOrw9hXA==";
 
     /*public static String encrypt(String value) {
         try {

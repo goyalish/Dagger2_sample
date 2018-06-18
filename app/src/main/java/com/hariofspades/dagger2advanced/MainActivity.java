@@ -51,7 +51,7 @@ public class MainActivity extends DaggerAppCompatActivity {
     }
 
     private void populateUsers() {
-        mMainPresenter.callJoinApi("abc@gmail.com", "Abc@123");
+        mMainPresenter.callJoinApi("test.user1@simplicitycrm.com", "P@ssW0rd");
 
         /*Call<RandomUsers> randomUsersCall = getRandomUserService().getRandomUsers(20);
         randomUsersCall.enqueue(new Callback<RandomUsers>() {

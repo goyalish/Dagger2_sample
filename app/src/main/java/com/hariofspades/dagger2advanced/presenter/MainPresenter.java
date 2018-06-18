@@ -50,7 +50,9 @@ public class MainPresenter {
         String timeStamp = String.valueOf(Calendar.getInstance().getTimeInMillis());
         UserCredentials userCredentials = new UserCredentials(userName, password, timeStamp);
 
-        String data = AppModule.provideGson().toJson(userCredentials);
+        //String data = AppModule.provideGson().toJson(userCredentials);
+        String data = "{\"UserName\":\"" + userName + "\",\"Password\":\"" + password + "\",\"Timestamp\":" + timeStamp + "}";
+        //data = "{\"UserName\":\"test.user@simplicitycrm.com\",\"Password\":\"P@ssW0rd\",\"Timestamp\":1528781748}";
         String encryptedData = AESAlgorithm.encrypt(data);
 
         Map<String, String> header = mNetworkManager.getBasicHeader();

@@ -1,37 +1,37 @@
 package com.hariofspades.dagger2advanced.model;
 
 public class UserCredentials {
-    private String userName;
-    private String password;
-    private String timeStamp;
+    private String UserName;
+    private String Password;
+    private String Timestamp;
 
     public UserCredentials(String userName, String password, String timeStamp) {
-        this.userName = userName;
-        this.password = password;
-        this.timeStamp = timeStamp;
+        this.UserName = userName;
+        this.Password = password;
+        this.Timestamp = timeStamp;
     }
 
     public String getUserName() {
-        return userName;
+        return UserName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.UserName = userName;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.Password = password;
     }
 
     public String getTimeStamp() {
-        return timeStamp;
+        return Timestamp;
     }
 
     public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
+        this.Timestamp = timeStamp;
     }
 }
