@@ -11,6 +11,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -26,4 +27,20 @@ public interface RandomUsersApi {
 
     @POST("account/join")
     Call<ApiResponse> join(@HeaderMap Map<String, String> headers, @Body UserDetails userDetails);
+
+    @POST("oauth/refresh-token")
+    Call<Object> refreshToken(@HeaderMap Map<String, String> headers);
+
+    @POST("account/forgotten-password")
+    Call<Object> forgotPassword(@HeaderMap Map<String, String> headers);
+
+    @GET("members/{ResourceID}")
+    Call<Object> getMemberProfile(@HeaderMap Map<String, String> headers, @Path("ResourceID") String resourceId);
+
+    @POST("account/login")
+    Call<Object> login(@HeaderMap Map<String,String> headers);
+
+    @POST("members/{ResourceID}")
+    Call<Object> profileUpdate(@HeaderMap Map<String,String> headers,
+                               @Path("ResourceID") String resourceId, @Body UserDetails userDetails);
 }

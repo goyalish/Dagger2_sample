@@ -6,6 +6,7 @@ import android.util.Log;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -22,8 +23,18 @@ public class NetworkManager {
     }
 
     public Map<String, String> getBasicHeader() {
-        Map<String, String> header = new LinkedHashMap<>();
+        Map<String, String> header = new TreeMap<>();
         header.put("data", "");
+        header.put("device", "TEST_DEVICE_ID");
+        header.put("oauth_consumer_key", oauth_consumer_key);
+        //header.put("oauth_consumer_key", "pjdrOnv4F06D3IPOmnP4AA");
+        header.put("oauth_signature_method", "HMAC-SHA256");
+        header.put("oauth_timestamp", "");
+        return header;
+    }
+
+    public Map<String, String> getRefreshTokenHeader() {
+        Map<String, String> header = new TreeMap<>();
         header.put("device", "TEST_DEVICE_ID");
         header.put("oauth_consumer_key", oauth_consumer_key);
         //header.put("oauth_consumer_key", "pjdrOnv4F06D3IPOmnP4AA");

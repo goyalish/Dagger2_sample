@@ -20,7 +20,7 @@ data class PersonalDetails(
 	val title: String? = null,
 
 	@field:SerializedName("GivenName")
-	val givenName: String? = null,
+	var givenName: String? = null,
 
 	@field:SerializedName("EmailAddress")
 	val emailAddress: String? = null

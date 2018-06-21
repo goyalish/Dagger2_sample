@@ -49,7 +49,7 @@ public class MainActivity extends DaggerAppCompatActivity {
     }
 
     private void populateUsers() {
-        mMainPresenter.callJoinApi("abcdefgh@simplicitycrm.com", "G@tPlus_N3wM3mb3r");
+        mMainPresenter.callGetProfileApi("abcdefgh2@simplicitycrm.com", "G@tPlus_N3wM3mb3r");
     }
 
 
