@@ -6,7 +6,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hariofspades.dagger2advanced.interfaces.RandomUsersApi;
-import com.hariofspades.dagger2advanced.network.NetworkManager;
+import com.hariofspades.dagger2advanced.network.LoggerModule;
 
 import dagger.Binds;
 import dagger.Module;
@@ -27,9 +27,15 @@ public abstract class AppModule {
     }
 
     @Provides
+    public static LoggerModule provideLogger() {
+        return new LoggerModule();
+    }
+
+    @Provides
     public static OkHttpClient provideOkHttpClient() {
         return new OkHttpClient()
                 .newBuilder()
+                .addInterceptor(new LoggerModule().provideLogger())
                 .build();
     }
 
@@ -37,7 +43,7 @@ public abstract class AppModule {
     public static Retrofit provideRetrofit(OkHttpClient okHttpClient, Gson gson) {
         return new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://test.demoloyalty.simplicitycrm.com/services/mobileapi/201605/")
+                .baseUrl("https://test.mcm.simplicitycrm.com/services/mobileapi/201605/")
                 //.baseUrl("https://randomuser.me/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

@@ -1,5 +1,10 @@
 
-;squid:S1170"!Make this final field static too.(ÀñõÓüÿÿÿÿ
-–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÍ¬¾
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÕøÄøÿÿÿÿ
 lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ÒÇªúÿÿÿÿ
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Šå•žþÿÿÿÿ8Î¢³Á,
+Bsquid:S1170"!Make this final field static too.(ÏÝ¾üÿÿÿÿ8Î¢³Á,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(É™Ú½8Î¢³Á,
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÕøÄøÿÿÿÿ
+squid:S00116"]Rename this field "oauth_consumer_key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïô„ˆúÿÿÿÿ8Þ¦£·Á,
+Bsquid:S1170"!Make this final field static too.(ïô„ˆúÿÿÿÿ8Þ¦£·Á,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ç²öµýÿÿÿÿ8†º¬·Á,
+;squid:S1170"!Make this final field static too.(¹¦Å¬øÿÿÿÿ

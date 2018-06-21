@@ -12,12 +12,15 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.inject.Inject;
 
 public class NetworkManager {
-    public final String baseUrl = "https://test.demoloyalty.simplicitycrm.com/services/mobileapi/201605/";
+    //    public final String baseUrl = "https://test.demoloyalty.simplicitycrm.com/services/mobileapi/201605/";
+    public final String baseUrl = "https://test.mcm.simplicitycrm.com/services/mobileapi/201605/";
     private final String secret = "i2WzqlmoAkh4vTFZaEnFgsFsVO4Kq8AgLDU2PNCAtQg";
     private final String oauth_consumer_key = "fAycQ9xEH0uobDv2twcclA";
 
     @Inject
-    public NetworkManager(){}
+    public NetworkManager() {
+    }
+
     public Map<String, String> getBasicHeader() {
         Map<String, String> header = new LinkedHashMap<>();
         header.put("data", "");
@@ -31,9 +34,9 @@ public class NetworkManager {
 
     public String joinStringListWithAmpersand(List<String> inputList) {
         StringBuilder stringBuilder = new StringBuilder();
-        for(int i = 0; i < inputList.size(); i++) {
-            if(i < inputList.size() - 1)
-            stringBuilder.append(inputList.get(i)).append("&");
+        for (int i = 0; i < inputList.size(); i++) {
+            if (i < inputList.size() - 1)
+                stringBuilder.append(inputList.get(i)).append("&");
         }
         stringBuilder.append(inputList.get(inputList.size() - 1));
         return stringBuilder.toString();
